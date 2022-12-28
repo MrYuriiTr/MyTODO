@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+background-color: #eae6c3;
+height: 100vh;
+display: flex;
+justify-content: center;
+padding: 32px;
+font-size: 18px;
+font-weight: 300;
+}
+
+.todo {
+    padding: 32px;
+    background-color: #fff;
+    width: 90vw;
+    border-radius: 16px;
+}
+
+.todo_new {
+    --size:50px;
+    display: flex;
+    margin: 16px 0;
+}
+
+.todo_new input {
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 8px 16px;
+    height: var(--size);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.todo_add, .todo_task-del {
+    text-align: center;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    line-height: var(--size);
+    font-size: 32px;
+    font-weight: 200;
+    background-color:rgb(163, 233, 163) ;
+    cursor: pointer;
+}
+
+.todo_list {
+    margin-top: 16px;
+}
+
+.todo_list > *:not(:last-child) {
+margin-bottom: 8px;
+}
+
+.todo_task {
+cursor: default;
+--size: 30px;
+display: flex;
+min-height: var(--size);
+align-items: center;
+}
+
+.todo_task:hover .todo_task-del {
+    display: block;
+}
+
+.todo_task_complete .todo_task-text {
+text-decoration: line-through;
+color: rgba(0, 0, 0, 0.3);
+}
+
+.todo_checkbox {
+margin-right: 16px;
+}
+
+.todo_checkbox input {
+    display: none;
+}
+
+.todo_checkbox input:checked+div {
+    background-color: rgb(163, 233, 163);
+}
+
+.todo_checkbox input:checked+div::after {
+    display: block;
+}
+
+.todo_checkbox div {
+    cursor: pointer;
+    --size: 25px;
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid #eae6c3;
+    border-radius: 4px;
+    position: relative;
+}
+
+.todo_checkbox div::after {
+    content: '\2713';
+    text-align: center;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.todo_task-text {
+font-size: 20px;
+}
+
+.todo_task-del {
+    display: none;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 25px;
+    line-height: calc(var(--size) * 0.78);
+    background-color: rgb(234, 91, 91);
+}
